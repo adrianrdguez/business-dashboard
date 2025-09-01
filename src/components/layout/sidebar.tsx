@@ -36,17 +36,19 @@ export function Sidebar() {
 
       {/* Sidebar */}
       <div className={cn(
-        "fixed inset-y-0 left-0 z-40 w-64 bg-card border-r border-border transform transition-transform duration-200 ease-in-out lg:translate-x-0 lg:static lg:inset-0",
+        "fixed inset-y-0 left-0 z-40 w-64 bg-gradient-to-b from-card/60 to-card/40 backdrop-blur-md border-r border-border/50 transform transition-transform duration-200 ease-in-out lg:translate-x-0 lg:static lg:inset-0",
         isOpen ? "translate-x-0" : "-translate-x-full"
       )}>
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col h-full relative">
+          {/* Subtle gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-accent/5 pointer-events-none" />
           {/* Logo */}
-          <div className="flex items-center justify-center h-16 px-4 border-b border-border">
+          <div className="flex items-center justify-center h-16 px-4 border-b border-border/50 relative z-10">
             <h1 className="text-xl font-bold text-primary">BusinessDash</h1>
           </div>
 
           {/* Navigation */}
-          <nav className="flex-1 px-4 py-6 space-y-2">
+          <nav className="flex-1 px-4 py-6 space-y-2 relative z-10">
             {navigation.map((item) => {
               const Icon = item.icon
               return (
@@ -54,14 +56,17 @@ export function Sidebar() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors duration-200",
+                    "group flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-all duration-300 relative overflow-hidden",
                     item.current
-                      ? "bg-primary text-primary-foreground"
-                      : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                      ? "bg-primary/20 backdrop-blur-sm text-primary border border-primary/30 shadow-lg shadow-primary/20"
+                      : "text-muted-foreground hover:bg-accent/30 hover:text-accent-foreground hover:backdrop-blur-sm hover:border hover:border-accent/30 hover:shadow-lg hover:scale-105"
                   )}
                 >
-                  <Icon className="mr-3 h-5 w-5" />
+                  <Icon className="mr-3 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
                   {item.name}
+                  {!item.current && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-accent/10 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
+                  )}
                 </a>
               )
             })}

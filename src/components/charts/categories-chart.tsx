@@ -4,11 +4,11 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import dashboardData from '@/data/dashboard-data.json'
 
 const COLORS = [
-  'hsl(var(--primary))',
-  'hsl(217.2 91.2% 69.8%)',
-  'hsl(217.2 91.2% 79.8%)',
-  'hsl(217.2 91.2% 89.8%)',
-  'hsl(var(--muted-foreground))',
+  '#60A5FA', // Blue-400
+  '#34D399', // Emerald-400
+  '#F472B6', // Pink-400
+  '#FBBF24', // Amber-400
+  '#A78BFA', // Violet-400
 ]
 
 export function CategoriesChart() {
@@ -42,7 +42,7 @@ export function CategoriesChart() {
   }
 
   return (
-    <div className="bg-card rounded-lg border border-border p-6">
+    <div className="bg-card/30 backdrop-blur-sm rounded-lg border border-border/30 p-6 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
       <div className="mb-4">
         <h3 className="text-lg font-semibold text-foreground">Top Product Categories</h3>
         <p className="text-sm text-muted-foreground">Revenue performance by category</p>

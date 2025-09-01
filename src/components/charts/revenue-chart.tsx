@@ -32,7 +32,7 @@ export function RevenueChart() {
   }
 
   return (
-    <div className="bg-card rounded-lg border border-border p-6">
+    <div className="bg-card/30 backdrop-blur-sm rounded-lg border border-border/30 p-6 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
       <div className="mb-4">
         <h3 className="text-lg font-semibold text-foreground">Monthly Revenue Trend</h3>
         <p className="text-sm text-muted-foreground">Revenue vs Target over the last 12 months</p>
@@ -64,20 +64,21 @@ export function RevenueChart() {
             <Line 
               type="monotone" 
               dataKey="revenue" 
-              stroke="hsl(var(--primary))" 
+              stroke="#60A5FA"
               strokeWidth={3}
               name="Revenue"
-              dot={{ fill: 'hsl(var(--primary))', strokeWidth: 2, r: 4 }}
-              activeDot={{ r: 6, fill: 'hsl(var(--primary))' }}
+              dot={{ fill: '#60A5FA', strokeWidth: 2, r: 4 }}
+              activeDot={{ r: 6, fill: '#60A5FA', stroke: '#3B82F6', strokeWidth: 2 }}
             />
             <Line 
               type="monotone" 
               dataKey="target" 
-              stroke="hsl(var(--muted-foreground))" 
+              stroke="#34D399"
               strokeWidth={2}
               strokeDasharray="5 5"
               name="Target"
-              dot={{ fill: 'hsl(var(--muted-foreground))', strokeWidth: 2, r: 3 }}
+              dot={{ fill: '#34D399', strokeWidth: 2, r: 3 }}
+              activeDot={{ r: 5, fill: '#34D399', stroke: '#10B981', strokeWidth: 2 }}
             />
           </LineChart>
         </ResponsiveContainer>

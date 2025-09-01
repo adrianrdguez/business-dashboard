@@ -30,6 +30,8 @@ export function DashboardContent() {
     {
       title: 'Total Revenue',
       value: formatCurrency(kpis.revenue),
+      numericValue: kpis.revenue,
+      formatNumber: formatCurrency,
       change: '12.5%',
       changeType: 'positive' as const,
       icon: DollarSign,
@@ -37,6 +39,8 @@ export function DashboardContent() {
     {
       title: 'Active Users',
       value: formatNumber(kpis.users),
+      numericValue: kpis.users,
+      formatNumber: formatNumber,
       change: '8.2%',
       changeType: 'positive' as const,
       icon: Users,
@@ -44,6 +48,8 @@ export function DashboardContent() {
     {
       title: 'Growth Rate',
       value: `${kpis.growth}%`,
+      numericValue: kpis.growth,
+      formatNumber: (value) => `${value.toFixed(1)}%`,
       change: '2.1%',
       changeType: 'positive' as const,
       icon: TrendingUp,
@@ -51,6 +57,8 @@ export function DashboardContent() {
     {
       title: 'Total Profit',
       value: formatCurrency(kpis.profit),
+      numericValue: kpis.profit,
+      formatNumber: formatCurrency,
       change: '15.3%',
       changeType: 'positive' as const,
       icon: PiggyBank,

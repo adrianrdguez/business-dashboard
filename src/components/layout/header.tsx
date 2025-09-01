@@ -20,8 +20,9 @@ export function Header() {
   }
 
   return (
-    <header className="bg-card border-b border-border px-6 py-4">
-      <div className="flex items-center justify-between">
+    <header className="bg-card/50 backdrop-blur-md border-b border-border/50 px-6 py-4 relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
+      <div className="flex items-center justify-between relative z-10">
         {/* Left side - Search */}
         <div className="flex-1 max-w-xl">
           <div className="relative">
