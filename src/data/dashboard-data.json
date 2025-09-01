@@ -1,0 +1,35 @@
+{
+  "kpis": {
+    "revenue": 2400000,
+    "users": 12500,
+    "growth": 15.2,
+    "profit": 890000
+  },
+  "salesData": [
+    {"month": "Jan", "revenue": 180000, "target": 200000},
+    {"month": "Feb", "revenue": 220000, "target": 210000},
+    {"month": "Mar", "revenue": 190000, "target": 220000},
+    {"month": "Apr", "revenue": 250000, "target": 230000},
+    {"month": "May", "revenue": 280000, "target": 240000},
+    {"month": "Jun", "revenue": 320000, "target": 250000},
+    {"month": "Jul", "revenue": 290000, "target": 260000},
+    {"month": "Aug", "revenue": 310000, "target": 270000},
+    {"month": "Sep", "revenue": 340000, "target": 280000},
+    {"month": "Oct", "revenue": 360000, "target": 290000},
+    {"month": "Nov", "revenue": 380000, "target": 300000},
+    {"month": "Dec", "revenue": 400000, "target": 310000}
+  ],
+  "regions": [
+    {"name": "North America", "value": 45, "customers": 5600},
+    {"name": "Europe", "value": 30, "customers": 3750},
+    {"name": "Asia Pacific", "value": 20, "customers": 2500},
+    {"name": "Latin America", "value": 5, "customers": 625}
+  ],
+  "categories": [
+    {"name": "Software", "revenue": 850000, "growth": 12.5},
+    {"name": "Hardware", "revenue": 620000, "growth": 8.2},
+    {"name": "Services", "revenue": 490000, "growth": 18.7},
+    {"name": "Support", "revenue": 280000, "growth": 6.3},
+    {"name": "Training", "revenue": 160000, "growth": 22.1}
+  ]
+}
